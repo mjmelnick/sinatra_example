@@ -1,0 +1,21 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  db_host: localhost
+  db_name: sinatra_example_dev
+  db_username: root
+  db_password:
+  socket: /tmp/mysql.sock
+  reconnect: false
+  pool: 5
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  db_name: sinatra_example_prod
+  db_host: <production db host>
+  db_username: <%= ENV["SINATRA_PROD_USERNAME"] %>
+  db_password: <%= ENV["SINATRA_PROD_PASSWORD"] %>
+  socket: /tmp/mysql.sock
+  reconnect: false
+  pool: 5
